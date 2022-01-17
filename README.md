@@ -19,9 +19,9 @@ We want to open the port so it becaomse public. In my case I am using Google wif
 - Choose User Datagram Protocol (UDP).  
 - Tap Save .  
   
-Port 7447 is now public open.
+**Port 7447 is now public open.**
 
-On the host in (ubuntu)  
+# On the host in (ubuntu)  
 ``sudo apt-get install ufw``    
 ``sudo ufw enable``  
 ``sudo ufw allow 7447/udp``  
