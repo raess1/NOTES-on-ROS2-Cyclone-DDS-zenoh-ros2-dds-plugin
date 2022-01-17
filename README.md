@@ -96,6 +96,7 @@ The string must have the format “regex=float” where:
 
 
 #On k3lso quadruped run
+  
 #Now the full zenoh/DDS bridge commands will be:
   ``ros2 run zenoh_bridge_dds zenoh_bridge_dds --no-multicast-scouting -l udp/0.0.0.0:7447 \
   --allow "position|speed|levels|race_flags|emergency_stop" \
@@ -103,6 +104,7 @@ The string must have the format “regex=float” where:
   --max-frequency "levels=1"``
   
  #On Host 
+  
   ``ros2 run zenoh_bridge_dds zenoh_bridge_dds --no-multicast-scouting -l udp/0.0.0.0:7447 \
   -e udp/192.168.86.37:7447 \
   --allow "position|speed|levels|race_flags|emergency_stop" \
