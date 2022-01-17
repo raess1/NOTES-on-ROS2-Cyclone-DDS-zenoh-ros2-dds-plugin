@@ -24,17 +24,6 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 
 ``source setup.bash``
 
-#Demo
-
-``ROS_DOMAIN_ID=1 ros2 run turtlesim turtlesim_node``
-
-``ROS_DOMAIN_ID=2 ros2 run turtlesim turtle_teleop_key``
-
-``./target/release/zenoh-bridge-dds -d 1``
-
-``./target/release/zenoh-bridge-dds -d 2``
-
-
 
 #HOST1
 
@@ -67,7 +56,6 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 
 
 #HOST1 communication outside network. Open port ``7447`` on your host.    
-
 
 export CYCLONEDDS_URI=file://C:\dev_ws2\ddscyclonedds\.xml
 
