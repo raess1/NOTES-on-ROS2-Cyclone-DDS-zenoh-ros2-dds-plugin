@@ -3,13 +3,13 @@
 This is my notes on testing ROS2 Cyclone DDS + zenith-ros2-dds plugin. In this setup I am running two ubuntu 20.04 VM´s on Hyper-V on two diffrent computers. 
 
 So lets get started.  
-First we need to create a new hyper-v virtual switch fron the VM that will act as a "host" This is becuase we wnt the ability to forward ports on it.  
+First we need to create a new hyper-v virtual switch from the VM that will act as a "host" This is becuase we wnt the ability to forward ports on it.  
 How to add a new hyper-v virtual switch:   
 https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines
 
 Let's continue preparations, In this setup we will target the PORT: 7447/UDP
 
-We want to open the port so it becaomse public. In my case I am using Google wifi. And this is how I do it.  
+We want to open the port. In my case I am using Google wifi. And this is how I do it.  
 - Open the Google Home app .  
 - Tap Wi-Fi Settings. ...  
 - Tap Port management. ...  
