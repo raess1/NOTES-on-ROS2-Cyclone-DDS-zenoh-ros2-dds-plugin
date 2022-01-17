@@ -85,7 +85,7 @@ https://github.com/raess1/notes-fmyslef/blob/main/cyclonedds.xml
   
     
     
-# Pace the traffic
+# Pace the traffic (documents is in work)
 
 The traffic between ROS2 nodes can be intense and not compatible with the bandwidth or the message rate limitations imposed by some transports.
 
