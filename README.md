@@ -30,16 +30,16 @@ check status ``sudo ufw status verbose``
 
 # Let's continue installing ROS2 
 
-First install ROS2 foxy from steps below
+First install ROS2 foxy from steps below  
 https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Binary.html
 
-Create a Workspace
+Create a Workspace  
 https://docs.ros.org/en/foxy/Tutorials/Workspace/Creating-A-Workspace.html
 
-#Working with Eclipse Cyclone DDS (dont forget ``export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp``)
+#Working with Eclipse Cyclone DDS (dont forget ``export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp``)  
 https://docs.ros.org/en/foxy/Installation/DDS-Implementations/Working-with-Eclipse-CycloneDDS.html
 
-#Install the  zenith-ros2-dds plugin
+#Install the  zenith-ros2-dds plugin  
 https://github.com/eclipse-zenoh/zenoh-plugin-dds
 
 ``cd ~/ros_ws/src/``
@@ -62,34 +62,28 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 # Create an cyclonedds.xml with settings
 
 ``
-https://github.com/raess1/notes-fmyslef/blob/main/cyclonedds.xml
+https://github.com/raess1/NOTES-on-ROS2-Cyclone-DDS-zenith-ros2-dds-plugin/blob/main/cyclonedds.xml
 ``
 
-#Source ros2 and 
+``. ~/ros2_foxy/ros2-linux/setup.bash``  
+``. install/local_setup.bash``  
+``export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp``  
+``export CYCLONEDDS_URI=file://YOURPATH/cyclonedds.xml``  
 
-``export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp``
 
-``export CYCLONEDDS_URI=file://YOURPATH/cyclonedds.xml``
+# Explicitly activate multicast on loopback on Unix systems doing:  
+``sudo route add -net 224.0.0.0 netmask 240.0.0.0 dev lo``  
+``sudo ifconfig lo multicast``  
 
-
-# Explicitly activate multicast on loopback on Unix systems doing:
-
-``sudo route add -net 224.0.0.0 netmask 240.0.0.0 dev lo``
-
-``sudo ifconfig lo multicast``
-
-# On k3lso quadruped run
-
-``ros2 run zenoh_bridge_dds zenoh_bridge_dds --no-multicast-scouting -l udp/0.0.0.0:7447 -e udp/192.168.86.37:7447``
-
-# In the base station
-
-``ros2 run zenoh_bridge_dds zenoh_bridge_dds --no-multicast-scouting -l udp/0.0.0.0:7447``
+# On k3lso quadruped run  
+``ros2 run zenoh_bridge_dds zenoh_bridge_dds --no-multicast-scouting -l udp/0.0.0.0:7447 -e udp/192.168.86.37:7447``  
+# In the base station  
+``ros2 run zenoh_bridge_dds zenoh_bridge_dds --no-multicast-scouting -l udp/0.0.0.0:7447``  
 
   
     
     
-# Pace the traffic (documents is in work)
+# Pace the traffic (documents is in work)  
 
 The traffic between ROS2 nodes can be intense and not compatible with the bandwidth or the message rate limitations imposed by some transports.
 
