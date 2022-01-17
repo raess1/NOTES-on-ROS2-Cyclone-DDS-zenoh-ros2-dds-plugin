@@ -12,13 +12,12 @@ https://docs.ros.org/en/foxy/Tutorials/Workspace/Creating-A-Workspace.html
 Install the  zenith-ros2-dds plugin
 https://github.com/eclipse-zenoh/zenoh-plugin-dds
 
-``cd /dev_ws2``
-
-``git clone https://github.com/eclipse-zenoh/zenoh-plugin-dds.git``
-
-``cd zenoh-plugin-dds``
-
-``cargo build --release -p zenoh-bridge-dds``
+cd ~/ros_ws/src/
+git clone https://github.com/eclipse-zenoh/zenoh-plugin-dds.git
+cd ~/ros_ws
+rosdep install -q --from-paths src --ignore-src -y
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
+source setup.bash
 
 
 start the plugin with
