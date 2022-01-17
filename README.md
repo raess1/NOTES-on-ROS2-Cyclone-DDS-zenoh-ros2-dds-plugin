@@ -9,7 +9,7 @@ https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-start
 
 Let's continue preparations, In this setup we will target the PORT: 7447
 
-We want to open the port so it becaomse public. In my case I am using Google wifi. And this is how I do it.
+We want to open the port so it becaomse public. In my case I am using Google wifi. And this is how I do it.  
 1.Open the Google Home app .  
 2.Tap Wi-Fi Settings. ...  
 3.Tap Port management. ...  
