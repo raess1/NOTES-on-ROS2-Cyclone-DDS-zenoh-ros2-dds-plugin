@@ -69,7 +69,7 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 #HOST1 communication outside network. Open port ``7447`` on your host.    
 
 
-
+export CYCLONEDDS_URI=file://C:\dev_ws2\ddscyclonedds\.xml
 
 
 
