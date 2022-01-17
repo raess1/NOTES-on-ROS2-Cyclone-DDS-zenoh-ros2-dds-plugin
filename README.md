@@ -69,7 +69,7 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 
 #On k3lso quadruped run
 
-``ros2 run zenoh_bridge_dds zenoh_bridge_dds --no-multicast-scouting -l udp/0.0.0.0:7447 -e udp/192.168.1.2:7447``
+``ros2 run zenoh_bridge_dds zenoh_bridge_dds --no-multicast-scouting -l udp/0.0.0.0:7447 -e udp/192.168.86.37:7447``
 
 #In the base station
 
