@@ -24,7 +24,20 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 
 ``source setup.bash``
 
+Demo
+``ROS_DOMAIN_ID=1 ros2 run turtlesim turtlesim_node``
 
+``ROS_DOMAIN_ID=2 ros2 run turtlesim turtle_teleop_key``
+
+``./target/release/zenoh-bridge-dds -d 1``
+
+``./target/release/zenoh-bridge-dds -d 2``
+
+
+
+
+
+NOTES
 start the plugin with
 ``ros2 run zenoh_bridge_dds zenoh_bridge_dds -d 1``
 
