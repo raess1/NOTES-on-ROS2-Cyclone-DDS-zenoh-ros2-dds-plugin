@@ -30,25 +30,7 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 # Create an cyclonedds.xml with settings
 
 ``
-<?xml version="1.0" encoding="UTF-8" ?>
-<CycloneDDS xmlns="https://cdds.io/config" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
-    <Domain id="any">
-        <General>
-            <NetworkInterfaceAddress>lo</NetworkInterfaceAddress>  <!-- This line -->
-            <AllowMulticast>default</AllowMulticast>
-            <MaxMessageSize>65500B</MaxMessageSize>
-            <FragmentSize>4000B</FragmentSize>
-        </General>
-        <Internal>
-            <Watermarks>
-                <WhcHigh>500kB</WhcHigh>
-            </Watermarks>
-            <AssumeMulticastCapable>lo</AssumeMulticastCapable>    <!-- And this line -->
-        </Internal>
-    </Domain>
-</CycloneDDS>
+https://github.com/raess1/notes-fmyslef/blob/main/cyclonedds.xml
 ``
 
 #Source ros2 and 
