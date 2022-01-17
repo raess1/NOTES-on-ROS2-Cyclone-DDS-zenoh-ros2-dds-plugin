@@ -61,7 +61,7 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 
 ``ROS_DOMAIN_ID=2 ros2 run turtlesim turtle_teleop_key``
 
-``./target/release/zenoh-bridge-dds -d 2 -e tcp/<host-1-ip>:7447``  - where ``<host-1-ip>`` is the IP of host 1
+``ros2 run zenoh_bridge_dds zenoh_bridge_dds -d 2 -e tcp/<host-1-ip>:7447``  - where ``<host-1-ip>`` is the IP of host 1
 
 
 
