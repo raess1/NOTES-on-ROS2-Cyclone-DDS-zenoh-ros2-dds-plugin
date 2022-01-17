@@ -61,6 +61,21 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 ``export CYCLONEDDS_URI=file://path/ddscyclonedds.xml``
 
 
+#You can also explicitly activate multicast on loopback on Unix systems doing:
+
+``sudo route add -net 224.0.0.0 netmask 240.0.0.0 dev lo``
+
+``sudo ifconfig lo multicast``
+
+#On k3lso run
+
+``zenoh-bridge-dds --no-multicast-scouting -l udp/0.0.0.0:7447``
+
+#In the base station
+
+``zenoh-bridge-dds --no-multicast-scouting -l udp/0.0.0.0:7447 -e udp/IP:7447``
+
+
 
 #Open port ubu
 
