@@ -78,10 +78,10 @@ https://github.com/raess1/NOTES-on-ROS2-Cyclone-DDS-zenith-ros2-dds-plugin/blob/
 
 
 
-**Control the list of topics that are allowed to be routed over zenoh**
+**Control the list of topics that are allowed to be routed over zenoh**  
 ``--allow``  
 
-**Specify a maximum frequency of data routing over zenoh per-topic**
+**Specify a maximum frequency of data routing over zenoh per-topic**  
 ``--max-frequency <String>``  
 
 
