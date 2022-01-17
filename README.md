@@ -36,13 +36,14 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 
 
 
-#HOST1
+##HOST1
 
 ``ROS_DOMAIN_ID=1 ros2 run turtlesim turtlesim_node``
 
 ``ros2 run zenoh_bridge_dds zenoh_bridge_dds -d 1``
 
-#HOST2
+##HOST2
+
 ``ROS_DOMAIN_ID=2 ros2 run turtlesim turtle_teleop_key``
 
 ``ros2 run zenoh_bridge_dds zenoh_bridge_dds -d 2``
