@@ -75,7 +75,19 @@ https://github.com/raess1/NOTES-on-ROS2-Cyclone-DDS-zenith-ros2-dds-plugin/blob/
 # In the base station  
 ``ros2 run zenoh_bridge_dds zenoh_bridge_dds --no-multicast-scouting -l udp/0.0.0.0:7447``  
 
-  
+
+
+
+**Control the list of topics that are allowed to be routed over zenoh**
+``--allow``  
+
+**Specify a maximum frequency of data routing over zenoh per-topic**
+``--max-frequency <String>``  
+
+
+
+
+
     
     
 # Pace the traffic (documents is in work)  
