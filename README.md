@@ -9,7 +9,7 @@ Create a Workspace
 https://docs.ros.org/en/foxy/Tutorials/Workspace/Creating-A-Workspace.html
 
 
-Install the  zenith-ros2-dds plugin
+#Install the  zenith-ros2-dds plugin
 https://github.com/eclipse-zenoh/zenoh-plugin-dds
 
 ``cd ~/ros_ws/src/``
@@ -24,7 +24,8 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 
 ``source setup.bash``
 
-Demo
+#Demo
+
 ``ROS_DOMAIN_ID=1 ros2 run turtlesim turtlesim_node``
 
 ``ROS_DOMAIN_ID=2 ros2 run turtlesim turtle_teleop_key``
