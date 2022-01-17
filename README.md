@@ -8,6 +8,8 @@ https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Binary.html
 Create a Workspace
 https://docs.ros.org/en/foxy/Tutorials/Workspace/Creating-A-Workspace.html
 
+#Working with Eclipse Cyclone DDS (dont forget ``export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp``)
+https://docs.ros.org/en/foxy/Installation/DDS-Implementations/Working-with-Eclipse-CycloneDDS.html
 
 #Install the  zenith-ros2-dds plugin
 https://github.com/eclipse-zenoh/zenoh-plugin-dds
@@ -25,58 +27,53 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 ``source setup.bash``
 
 
-#HOST1
+# Create an cyclonedds.xml with settings
 
-``ROS_DOMAIN_ID=1 ros2 run turtlesim turtlesim_node``
+``
+<?xml version="1.0" encoding="UTF-8" ?>
+<CycloneDDS xmlns="https://cdds.io/config" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
+    <Domain id="any">
+        <General>
+            <NetworkInterfaceAddress>lo</NetworkInterfaceAddress>  <!-- This line -->
+            <AllowMulticast>default</AllowMulticast>
+            <MaxMessageSize>65500B</MaxMessageSize>
+            <FragmentSize>4000B</FragmentSize>
+        </General>
+        <Internal>
+            <Watermarks>
+                <WhcHigh>500kB</WhcHigh>
+            </Watermarks>
+            <AssumeMulticastCapable>lo</AssumeMulticastCapable>    <!-- And this line -->
+        </Internal>
+    </Domain>
+</CycloneDDS>
+``
 
-``ros2 run zenoh_bridge_dds zenoh_bridge_dds -d 1``
+#Source ros2 and 
 
-#HOST2
-
-``ROS_DOMAIN_ID=2 ros2 run turtlesim turtle_teleop_key``
-
-``ros2 run zenoh_bridge_dds zenoh_bridge_dds -d 2``
-
-
-
-
-#hosts, avoiding UDP multicast communication
-
-#HOST1
-
-``ROS_DOMAIN_ID=1 ros2 run turtlesim turtlesim_node``
-
-``ros2 run zenoh_bridge_dds zenoh_bridge_dds -d 1``
-
-#HOST2
-
-``ROS_DOMAIN_ID=2 ros2 run turtlesim turtle_teleop_key``
-
-``ros2 run zenoh_bridge_dds zenoh_bridge_dds -d 2 -e tcp/<host-1-ip>:7447``  - where ``<host-1-ip>`` is the IP of host 1
-
-
-#HOST1 communication outside network. Open port ``7447`` on your host.    
-
+``export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp``
 
 ``export CYCLONEDDS_URI=file://path/ddscyclonedds.xml``
 
 
-#You can also explicitly activate multicast on loopback on Unix systems doing:
+# Explicitly activate multicast on loopback on Unix systems doing:
 
 ``sudo route add -net 224.0.0.0 netmask 240.0.0.0 dev lo``
 
 ``sudo ifconfig lo multicast``
 
-#On k3lso quadruped run
+# On k3lso quadruped run
 
 ``ros2 run zenoh_bridge_dds zenoh_bridge_dds --no-multicast-scouting -l udp/0.0.0.0:7447 -e udp/192.168.86.37:7447``
 
-#In the base station
+# In the base station
 
 ``ros2 run zenoh_bridge_dds zenoh_bridge_dds --no-multicast-scouting -l udp/0.0.0.0:7447``
 
 
-#Pace the traffic
+# Pace the traffic
 
 The traffic between ROS2 nodes can be intense and not compatible with the bandwidth or the message rate limitations imposed by some transports.
 
