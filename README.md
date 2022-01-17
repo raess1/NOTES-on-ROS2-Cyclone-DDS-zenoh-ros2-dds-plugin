@@ -66,6 +66,8 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 ``ros2 run zenoh_bridge_dds zenoh_bridge_dds -d 2 -e tcp/<host-1-ip>:7447``  - where ``<host-1-ip>`` is the IP of host 1
 
 
+#HOST1 communication outside network. Open port ``7447`` on your host.    
+
 
 
 
