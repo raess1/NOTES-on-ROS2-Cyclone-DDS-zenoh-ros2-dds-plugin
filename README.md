@@ -48,6 +48,10 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 
 ``cd ~/ros_ws``
 
+``. ~/ros2_foxy/ros2-linux/setup.bash``
+
+``. install/local_setup.bash``
+
 ``rosdep install -q --from-paths src --ignore-src -y``
 
 ``colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release``
