@@ -21,7 +21,7 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 ``cargo build --release -p zenoh-bridge-dds``
 
 
-
-````
+start the plugin with
+``ros2 run zenoh_bridge_dds zenoh_bridge_dds -d 1``
 
 
