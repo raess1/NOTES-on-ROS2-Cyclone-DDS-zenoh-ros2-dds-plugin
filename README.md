@@ -7,7 +7,7 @@ First we need to create a new hyper-v virtual switch fron the VM that will act a
 How to add a new hyper-v virtual switch:   
 https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines
 
-Let's continue preparations, In this setup we will target the PORT: 7447  
+Let's continue preparations, In this setup we will target the PORT: 7447/UDP
 
 We want to open the port so it becaomse public. In my case I am using Google wifi. And this is how I do it.  
 1.Open the Google Home app .  
@@ -19,13 +19,16 @@ We want to open the port so it becaomse public. In my case I am using Google wif
 7.Choose User Datagram Protocol (UDP).  
 8.Tap Save .  
   
-Port 7447 is now public open.  
+Port 7447 is now public open.
+
+On the host in (ubuntu)  
+``sudo apt-get install ufw``    
+``sudo ufw enable``  
+``sudo ufw allow 7447/udp``  
+check status ``sudo ufw status verbose``  
 
 
-
-
-
-#ROS 2 Cyclone DDS zenith-ros2-dds plugin
+# Let's continue installing ROS2 
 
 First install ROS2 foxy from steps below
 https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Binary.html
@@ -62,7 +65,7 @@ https://github.com/raess1/notes-fmyslef/blob/main/cyclonedds.xml
 
 ``export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp``
 
-``export CYCLONEDDS_URI=file://path/ddscyclonedds.xml``
+``export CYCLONEDDS_URI=file://YOURPATH/cyclonedds.xml``
 
 
 # Explicitly activate multicast on loopback on Unix systems doing:
@@ -79,7 +82,9 @@ https://github.com/raess1/notes-fmyslef/blob/main/cyclonedds.xml
 
 ``ros2 run zenoh_bridge_dds zenoh_bridge_dds --no-multicast-scouting -l udp/0.0.0.0:7447``
 
-
+  
+    
+    
 # Pace the traffic
 
 The traffic between ROS2 nodes can be intense and not compatible with the bandwidth or the message rate limitations imposed by some transports.
