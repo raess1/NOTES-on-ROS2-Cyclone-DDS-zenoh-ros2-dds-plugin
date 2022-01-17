@@ -73,4 +73,11 @@ export CYCLONEDDS_URI=file://C:\dev_ws2\ddscyclonedds\.xml
 
 
 
+#Open port ubu
+
+``sudo ufw enable``
+
+``sudo ufw allow 7447``
+
+check status ``sudo ufw status verbose``
 
