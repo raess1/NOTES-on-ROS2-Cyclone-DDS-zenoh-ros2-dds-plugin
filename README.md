@@ -53,6 +53,8 @@ https://github.com/eclipse-zenoh/zenoh-plugin-dds
 
 #hosts, avoiding UDP multicast communication
 
+#HOST1
+
 ``ROS_DOMAIN_ID=1 ros2 run turtlesim turtlesim_node``
 
 ``ros2 run zenoh_bridge_dds zenoh_bridge_dds -d 1``
