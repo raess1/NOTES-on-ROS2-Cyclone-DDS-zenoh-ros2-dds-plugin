@@ -3,7 +3,7 @@
 This is my notes on testing ROS2 Cyclone DDS + zenoh-ros2-dds plugin. In this setup I am running two ubuntu 20.04 VM´s on Hyper-V on two diffrent computers. 
 
 So lets get started.  
-First we need to create a new hyper-v virtual switch from the VM that will act as a "host" This is becuase we wnt the ability to forward ports on it.  
+First we need to create a new hyper-v virtual switch from the VM that will act as a "host" This is becuase we want the ability to forward ports on it.  
 How to add a new hyper-v virtual switch:   
 https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines
 
